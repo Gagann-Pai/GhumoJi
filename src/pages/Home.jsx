@@ -58,7 +58,14 @@ function Home({ selectedState, searchResults }) {
 
     let statusMessage = null;
     if (loading) {
-        statusMessage = <p>Loading places...</p>;
+        statusMessage = (
+            <div className="loading-state">
+                <h3>Waking up the server... 🚀</h3>
+                <p>
+                    Grabbing the best destinations! (This might take up to a minute)
+                </p>
+            </div>
+        );
     } else if (error) {
         statusMessage = <div className="error">{error}</div>;
     }

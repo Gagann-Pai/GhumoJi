@@ -564,3 +564,35 @@
 }
 
 }
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.cards::-webkit-scrollbar {
+    display: none; 
+}
+.cards {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+/* Server Loading State */
+.loading-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #56565a;
+}
+
+.loading-state h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #1d1d1f;
+}
+
+.loading-state p {
+    font-size: 15px;
+}
