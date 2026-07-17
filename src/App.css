@@ -127,6 +127,7 @@
   display: none;
 }
 .fplaces .cards .card {
+  width: 480px;
   min-width: 480px;
   height: 560px;
   border-radius: 20px;
@@ -586,7 +587,8 @@
   }
 
   .fplaces .cards .card{
-    min-width: 260px;
+  width: 260px;
+  min-width: 260px;
     height: 380px;
   }
 
