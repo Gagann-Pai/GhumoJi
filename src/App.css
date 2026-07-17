@@ -514,56 +514,126 @@
 }
 @media(max-width:900px){
 
-.card{
+  .navbar{
+    padding: 0 20px;
+  }
 
-    grid-template-columns:1fr;
+  .navlink{
+    gap: 20px;
+  }
 
-}
+  .fplaces{
+    padding: 40px 30px;
+  }
 
-.card img{
-    height:300px;
-}
+  .fplaces .cards .card{
+    min-width: 320px;
+    height: 450px;
+  }
 
-.glass{
-    padding:30px;
-}
+  .about-section,
+  .contact-section{
+    padding: 40px 30px;
+  }
 
-.glass h1{
-    font-size:2.3rem;
-}
+  .site-footer{
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 25px 30px;
+  }
 
+  .footer-brand,
+  .footer-copyright,
+  .footer-links{
+    justify-self: center;
+  }
 }
 
 @media(max-width:650px){
 
-.searchBox{
-    flex-direction:column;
-}
+  .navbar{
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+    gap: 12px;
+  }
 
-.searchBox button{
-    justify-content:center;
-}
+  .navlink{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
 
-.glass{
-    padding:22px;
-}
+  .searchBox{
+    padding: 0 15px;
+  }
 
-.glass h1{
-    font-size:2rem;
-}
+  .searchBox input{
+    width: 100%;
+    margin-bottom: 10px;
+  }
 
-.content{
-    padding:22px;
-}
+  .searchBox button{
+    width: 100%;
+  }
 
-.content h2{
-    font-size:30px;
-}
+  .fplaces{
+    padding: 30px 15px;
+  }
 
-.section h3{
-    font-size:21px;
-}
+  .fplaces h2{
+    font-size: 24px;
+  }
 
+  .fplaces .cards .card{
+    min-width: 260px;
+    height: 380px;
+  }
+
+  .fplaces .cards .card h3{
+    font-size: 22px;
+  }
+
+  .fplaces .cards .card p.desc{
+    font-size: 13px;
+    width: 100%;
+  }
+
+  .about-section,
+  .contact-section{
+    padding: 30px 15px;
+  }
+
+  .contact-links{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .place-details{
+    margin: 30px auto;
+  }
+
+  .place-details img{
+    height: 250px;
+  }
+
+  .admin-header{
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .admin-table{
+    font-size: 12px;
+  }
+
+  .site-footer{
+    padding: 20px 15px;
+  }
+
+  .footer-links{
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
