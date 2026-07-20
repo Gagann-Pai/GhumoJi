@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Navigate } from "react-router-dom";
 import axios from "axios";
 
 const api = "https://tourism-backend-x2h9.onrender.com/api/places";
 
-function AddPlace() {
+function AddPlace({ currentUser }) {
     const navigate = useNavigate();
 
     const [name, setName] = useState("");
@@ -38,6 +38,10 @@ function AddPlace() {
             setError("Failed to add place");
         }
     }
+
+    if (!currentUser || currentUser.role !== "admin") {
+    return <Navigate to="/" />;
+}
 
     let errorMessage = null;
     if (error) {

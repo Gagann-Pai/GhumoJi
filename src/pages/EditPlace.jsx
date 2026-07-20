@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate,Navigate } from "react-router-dom";
 import axios from "axios";
 
 const api = "https://tourism-backend-x2h9.onrender.com/api/places";
 
-function EditPlace() {
+function EditPlace({currentUser}) {
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -60,6 +60,10 @@ function EditPlace() {
         } catch (err) {
             setError("Failed to update place");
         }
+    }
+
+     if (!currentUser || currentUser.role !== "admin") {
+    return <Navigate to="/" />;
     }
 
     let errorMessage = null;

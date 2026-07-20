@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link,Navigate } from "react-router-dom";
 import axios from "axios";
 
 const api = "https://tourism-backend-x2h9.onrender.com/api/places";
 
-function Admin() {
+function Admin({ currentUser }) {
     const [places, setPlaces] = useState([]);
     const [error, setError] = useState("");
 
@@ -24,10 +24,14 @@ function Admin() {
     async function handleDelete(id) {
         try {
             await axios.delete(`${api}/${id}`);
-            fetchPlaces(); // refresh the list after deleting
+            fetchPlaces(); 
         } catch (err) {
             setError("Failed to delete place");
         }
+    }
+
+    if (!currentUser || currentUser.role !== "admin") {
+        return <Navigate to="/" />;
     }
 
     let errorMessage = null;
