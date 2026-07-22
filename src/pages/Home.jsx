@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import PlaceCard from "../components/PlaceCard";
+import left_arrow from '../assets/left-arrow.png';
+import right_arrow from '../assets/right-arrow.png';
 
 const api = "https://tourism-backend-x2h9.onrender.com/api/places";
 
@@ -13,7 +15,7 @@ const heroImages = [
       title: "Munnar" } 
 ];
 
-function Home({ selectedState, searchResults, currentUser}) {
+function Home({ selectedState, searchResults, currentUser }) {
     const [places, setPlaces] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
@@ -49,14 +51,13 @@ function Home({ selectedState, searchResults, currentUser}) {
         fetchPlaces();
     }, [selectedState]);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setHeroIndex((prev) =>
-                prev === heroImages.length - 1 ? 0 : prev + 1
-            );
-        }, 4000);
-        return () => clearInterval(interval);
-    }, []);
+    const nextSlide = () => {
+        setHeroIndex((prev) => (prev === heroImages.length - 1 ? 0 : prev + 1));
+    };
+
+    const prevSlide = () => {
+        setHeroIndex((prev) => (prev === 0 ? heroImages.length - 1 : prev - 1));
+    };
 
     let displayedPlaces = places;
     let heading = "Explore Tourist Places";
@@ -94,10 +95,24 @@ function Home({ selectedState, searchResults, currentUser}) {
             
             {!selectedState && (searchResults === null || searchResults === undefined) && (
                 <div className="hero-section">
+                    
+                    <button className="hero-arrow left" onClick={prevSlide}>
+                        <img src={left_arrow} alt="Previous" />
+                    </button>
+                    <button className="hero-arrow right" onClick={nextSlide}>
+                        <img src={right_arrow} alt="Next" />
+                    </button>
+
                     <img src={heroImages[heroIndex].image} alt={heroImages[heroIndex].title} />
+                    
                     <div className="hero-content">
                         <h1>{heroImages[heroIndex].title}</h1>
-                        <p>Discover India's most beautiful destinations</p>
+                        
+                        {currentUser ? (
+                            <p>Welcome back, {currentUser.name}! Ready for your next adventure?</p>
+                        ) : (
+                            <p>Discover India's most beautiful destinations. Login to plan your trip!</p>
+                        )}
                     </div>
                 </div>
             )}

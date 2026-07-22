@@ -1,16 +1,11 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import '../App.css';
-import logo from '../assets/logo.svg';
-
-const userApi = "https://tourism-backend-x2h9.onrender.com/api/users";
 
 function Navbar({ onStateSelect, resetHome, currentUser, setCurrentUser }) {
-    const [statesList, setStatesList] = useState([]);
-    const [showDropdown, setShowDropdown] = useState(false);
     const navigate = useNavigate();
+    const [showStates, setShowStates] = useState(false);
+    const [statesList, setStatesList] = useState([]);
 
     useEffect(() => {
         async function fetchStates() {
@@ -18,85 +13,86 @@ function Navbar({ onStateSelect, resetHome, currentUser, setCurrentUser }) {
                 const response = await axios.get("https://tourism-backend-x2h9.onrender.com/api/places/states");
                 setStatesList(response.data);
             } catch (err) {
-                console.log("Failed to load states");
+                console.error("Failed to load states", err);
             }
         }
         fetchStates();
     }, []);
 
-    async function handleLogout() {
+    const handleLogout = async () => {
         try {
-            await axios.post(`${userApi}/logout`, {}, { withCredentials: true });
+            await axios.post(
+                "https://tourism-backend-x2h9.onrender.com/api/users/logout", 
+                {}, 
+                { withCredentials: true }
+            );
             setCurrentUser(null);
+            resetHome();
             navigate("/");
         } catch (err) {
-            console.log("Logout failed");
+            console.error("Logout failed", err);
         }
-    }
-
-    let dropdownContent = null;
-    if (showDropdown) {
-        dropdownContent = (
-            <div className="dropdown-box">
-                {statesList.map((state) => (
-                    <div
-                        key={state}
-                        className="dropdown-item"
-                        onClick={() => {
-                            onStateSelect(state);
-                            setShowDropdown(false);
-                        }}
-                    >
-                        {state}
-                    </div>
-                ))}
-            </div>
-        );
-    }
-
-    // ONE slot in the navbar that changes based on login status
-    let rightSlot = null;
-
-    if (!currentUser) {
-        rightSlot = <Link to="/signup" className="navadmin">Sign Up</Link>;
-    } else if (currentUser.role === "admin") {
-        rightSlot = <Link to="/admin" className="navadmin">Admin</Link>;
-    } else {
-        rightSlot = <Link to="/favorites" className="navadmin">Liked</Link>;
-    }
-
-    let logoutButton = null;
-    if (currentUser) {
-        logoutButton = <button className="logout-btn" onClick={handleLogout}>Logout</button>;
-    }
+    };
 
     return (
         <div className="navbar">
-            <div className="navlogo">
-                <img src={logo} alt="logo" />                
+            <div className="navlogo" onClick={resetHome}>
                 <p>GhumoJi</p>
             </div>
-            <div className="navlink">
-            <Link to="/" onClick={() => { resetHome(); }}> Home </Link>               
-            <a href="#about-section">About</a>
-                <a href="#contact-section">Contact</a>
-                
-                <div className="container">
-                    <button 
-                        className="dropdown-btn" 
-                        onClick={() => setShowDropdown(!showDropdown)}
-                    >
-                        States
-                    </button>
-                    
-                    {dropdownContent}
-                </div>
 
-                {rightSlot}
-                {logoutButton}
+            <div className="navlink">
+                <Link to="/" onClick={resetHome}>Home</Link>
+                <a href="#about-section">About</a>
+                <a href="#contact-section">Contact</a>
+
+                {currentUser ? (
+                    <>
+                        <div 
+                            className="container" 
+                            onMouseEnter={() => setShowStates(true)} 
+                            onMouseLeave={() => setShowStates(false)}
+                        >
+                            <button className="dropdown-btn">States ▾</button>
+                            {showStates && (
+                                <div className="dropdown-box">
+                                    {statesList.map((state) => (
+                                        <div 
+                                            key={state} 
+                                            className="dropdown-item"
+                                            onClick={() => {
+                                                onStateSelect(state);
+                                                setShowStates(false);
+                                                navigate("/");
+                                            }}
+                                        >
+                                            {state}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+
+                        {currentUser.role === "admin" && (
+                            <Link to="/admin" className="navadmin">Admin</Link>
+                        )}
+                        
+                        <span className="user-greeting">
+                            Hi, {currentUser.name}!
+                        </span>
+                        
+                        <button onClick={handleLogout} className="logout-btn">
+                            Logout
+                        </button>
+                    </>
+                ) : (
+                    <>
+                        <Link to="/login" className="login-link">Login</Link>
+                        <Link to="/signup" className="signup-btn-nav">Sign Up</Link>
+                    </>
+                )}
             </div>
         </div>
-    )
+    );
 }
 
 export default Navbar;
