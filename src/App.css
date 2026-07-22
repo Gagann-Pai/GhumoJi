@@ -25,8 +25,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 30px;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
 }
 
 .navlogo {
@@ -41,7 +41,7 @@ body {
 }
 
 .navlogo p {
-  color: #2563eb;
+  color: #d97706;
   font-weight: 1000;
   cursor: pointer;
 }
@@ -55,23 +55,23 @@ body {
 .navlink a {
   text-decoration: none;
   cursor: pointer;
-  color: #56565a;
+  color: #334155;
   transition: color 0.2s;
 }
 
 .navlink a:hover {
-  color: #2563eb;
+  color: #d97706;
 }
 
 .navlink .navadmin {
   color: #ffffff;
-  background: #2563eb;
+  background: #d97706;
   padding: 4px 10px;
   border-radius: 4px;
 }
 
 .navlink .navadmin:hover {
-  background: #115e59;
+  background: #b45309;
   color: #ffffff;
 }
 
@@ -83,14 +83,14 @@ body {
 .dropdown-btn {
   background: none;
   border: none;
-  color: #56565a;
+  color: #334155;
   font-size: 13px;
   cursor: pointer;
   padding: 0;
 }
 
 .dropdown-btn:hover {
-  color: #2563eb;
+  color: #d97706;
 }
 
 .dropdown-box {
@@ -99,7 +99,7 @@ body {
   left: 0;
   margin-top: 5px;
   background-color: #ffffff;
-  border: 1px solid #ccc;
+  border: 1px solid #0f172a;
   border-radius: 4px;
   width: 150px;
   max-height: 180px;
@@ -111,14 +111,14 @@ body {
   display: block;
   padding: 8px 12px;
   cursor: pointer;
-  color: #333333;
+  color: #0f172a;
   font-size: 13px;
   text-align: left;
 }
 
 .dropdown-item:hover {
-  background-color: #f4f4f4;
-  color: #2563eb;
+  background-color: #0f172a;
+  color: #ffffff;
 }
 
 .searchBox {
@@ -129,7 +129,7 @@ body {
 .searchBox input {
   padding: 10px 15px;
   width: 350px;
-  border: 1px solid #ddd;
+  border: 1px solid #94a3b8;
   border-radius: 25px;
   font-size: 14px;
 }
@@ -138,17 +138,17 @@ body {
   padding: 10px 18px;
   border: none;
   border-radius: 25px;
-  background: #2563eb;
-  color: white;
+  background: #d97706;
+  color: #ffffff;
   cursor: pointer;
 }
 
 .searchBox button:hover {
-  background-color: #115e59;
+  background-color: #b45309;
 }
 
 .error {
-  color: red;
+  color: #e11d48;
   font-size: 13px;
   margin-top: 5px;
   text-align: center;
@@ -171,7 +171,7 @@ body {
   position: absolute;
   left: 80px;
   bottom: 60px;
-  color: white;
+  color: #ffffff;
 }
 
 .hero-content h1 {
@@ -187,13 +187,13 @@ body {
 .loading-state {
   text-align: center;
   padding: 60px 20px;
-  color: #56565a;
+  color: #334155;
 }
 
 .loading-state h3 {
   font-size: 22px;
   margin-bottom: 10px;
-  color: #1d1d1f;
+  color: #0f172a;
 }
 
 .loading-state p {
@@ -202,7 +202,7 @@ body {
 
 .fplaces {
   width: 100%;
-  background-color: #f4f4f4;
+  background-color: #fafafa;
   padding: 60px 120px;
 }
 
@@ -212,11 +212,11 @@ body {
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 30px;
-  color: #1d1d1f;
+  color: #0f172a;
 }
 
 .fplaces h2 span {
-  color: #6e6e73;
+  color: #334155;
 }
 
 .fplaces .slider-wrapper {
@@ -247,13 +247,13 @@ body {
   overflow: hidden;
   flex-shrink: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease, .35s;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
   cursor: pointer;
 }
 
 .fplaces .cards .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15);
 }
 
 .fplaces .cards .card .overlay {
@@ -263,14 +263,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%, rgba(0,0,0,0) 100%);
-  color: white;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.2) 60%, rgba(0,0,0,0) 100%);
+  color: #ffffff;
 }
 
 .fplaces .cards .card h3,
 .fplaces .cards .card p.desc,
 .fplaces .cards .card .rating {
-  color: white;
+  color: #ffffff;
 }
 
 .fplaces .cards .card h3 {
@@ -289,7 +289,7 @@ body {
 }
 
 .fplaces .cards .card .tag {
-  color: #f4a261;
+  color: #d97706;
   font-weight: 600;
   font-size: 12px;
   text-transform: uppercase;
@@ -308,9 +308,9 @@ body {
   top: 40%;
   width: 50px;
   height: 50px;
-  border: none;
+  border: 1px solid #0f172a;
   border-radius: 50%;
-  background-color: #d7d7d7;
+  background-color: #ffffff;
   cursor: pointer;
   z-index: 100;
 }
@@ -344,27 +344,27 @@ body {
 .place-details h1 {
   font-size: 32px;
   font-weight: 600;
-  color: #1d1d1f;
+  color: #0f172a;
   margin-bottom: 10px;
 }
 
 .place-details p {
   font-size: 16px;
-  color: #56565a;
+  color: #334155;
   line-height: 1.6;
   margin-bottom: 10px;
 } 
 
 .about-section {
   padding: 60px 120px;
-  background: white;
+  background: #ffffff;
   text-align: center;      
 }
 
 .about-section p {
   font-size: 16px;
   line-height: 1.6;
-  color: #56565a;
+  color: #334155;
   max-width: 800px;
   margin: 0 auto;  
 }        
@@ -374,12 +374,12 @@ body {
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: #1d1d1f;
+  color: #0f172a;
 }
 
 .contact-section {
   padding: 60px 120px;
-  background: #f4f4f4;
+  background: #fafafa;
   text-align: center;       
 }
 
@@ -392,18 +392,18 @@ body {
 
 .contact-links a {
   text-decoration: none;
-  color: #2563eb;
+  color: #d97706;
   font-weight: 600;
   font-size: 15px;
   padding: 10px 20px;
-  border: 1px solid #2563eb;
+  border: 1px solid #d97706;
   border-radius: 6px;
   transition: 0.2s;
 }
 
 .contact-links a:hover {
-  background: #2563eb;
-  color: white;
+  background: #d97706;
+  color: #ffffff;
 }
 
 .site-footer {
@@ -411,21 +411,20 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   padding: 30px 120px;
-  background: #1f2937;
-  border-top: 1px solid #e0e0e0;
+  background: #0f172a;
   gap: 15px;
 }
 
 .footer-brand {
   font-weight: 700;
   font-size: 18px;
-  color: white;
+  color: #ffffff;
   justify-self: start;
 }
 
 .footer-copyright {
   font-size: 14px;
-  color: #d1d5db;
+  color: #cbd5e1;
   justify-self: center;
   text-align: center;
 }
@@ -438,13 +437,13 @@ body {
 
 .footer-links a {
   font-size: 14px;
-  color: #d1d5db;
+  color: #cbd5e1;
   text-decoration: none;
   transition: 0.2s;
 }
 
 .footer-links a:hover {
-  color: #2563eb;
+  color: #d97706;
 }
 
 .admin-page {
@@ -463,12 +462,12 @@ body {
 .admin-header h2 {
   font-size: 26px;
   font-weight: 600;
-  color: #1d1d1f;
+  color: #0f172a;
 }
 
 .add-btn {
-  background: #2563eb;
-  color: white;
+  background: #d97706;
+  color: #ffffff;
   text-decoration: none;
   padding: 10px 18px;
   border-radius: 6px;
@@ -477,7 +476,7 @@ body {
 }
 
 .add-btn:hover {
-  background: #115e59;
+  background: #b45309;
 }
 
 .admin-table {
@@ -488,14 +487,14 @@ body {
 .admin-table th {
   text-align: left;
   padding: 12px;
-  border-bottom: 2px solid #e0e0e0;
-  color: #56565a;
+  border-bottom: 2px solid #0f172a;
+  color: #0f172a;
   font-size: 14px;
 }
 
 .admin-table td {
   padding: 12px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e2e8f0;
   vertical-align: middle;
 }
 
@@ -507,8 +506,8 @@ body {
 }
 
 .edit-btn {
-  background: #f4a261;
-  color: white;
+  background: #0f172a;
+  color: #ffffff;
   text-decoration: none;
   padding: 6px 14px;
   border-radius: 5px;
@@ -517,12 +516,12 @@ body {
 }
 
 .edit-btn:hover {
-  background: #e08a45;
+  background: #334155;
 }
 
 .delete-btn {
-  background: #d9534f;
-  color: white;
+  background: #e11d48;
+  color: #ffffff;
   border: none;
   padding: 6px 14px;
   border-radius: 5px;
@@ -531,7 +530,7 @@ body {
 }
 
 .delete-btn:hover {
-  background: #b52b27;
+  background: #be123c;
 }
 
 .form-page {
@@ -543,7 +542,7 @@ body {
 .form-page h2 {
   font-size: 26px;
   font-weight: 600;
-  color: #1d1d1f;
+  color: #0f172a;
   margin-bottom: 25px;
 }
 
@@ -555,7 +554,7 @@ body {
 .form-page label {
   font-size: 14px;
   font-weight: 500;
-  color: #56565a;
+  color: #0f172a;
   margin-top: 15px;
   margin-bottom: 5px;
 }
@@ -564,7 +563,7 @@ body {
 .form-page textarea {
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #ccc;
+  border: 1px solid #94a3b8;
   border-radius: 6px;
   font-family: inherit;
 }
@@ -577,8 +576,8 @@ body {
 .form-page button {
   margin-top: 25px;
   padding: 12px;
-  background: #2563eb;
-  color: white;
+  background: #d97706;
+  color: #ffffff;
   border: none;
   border-radius: 6px;
   font-size: 15px;
@@ -587,7 +586,7 @@ body {
 }
 
 .form-page button:hover {
-  background: #115e59;
+  background: #b45309;
 }
 
 @media(max-width:900px){
@@ -654,13 +653,14 @@ body {
   .site-footer{ padding: 20px 15px; }
   .footer-links{ flex-direction: column; gap: 10px; }
 }
+
 .popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(15, 23, 42, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -668,7 +668,7 @@ body {
 }
 
 .popup-content {
-  background: white;
+  background: #ffffff;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
@@ -677,12 +677,12 @@ body {
 
 .popup-content h3 {
   margin-bottom: 10px;
-  color: #1d1d1f;
+  color: #0f172a;
 }
 
 .popup-content p {
   margin-bottom: 20px;
-  color: #56565a;
+  color: #334155;
   font-size: 14px;
 }
 
@@ -701,19 +701,21 @@ body {
 }
 
 .popup-login-btn {
-  background: #2563eb;
-  color: white;
+  background: #d97706;
+  color: #ffffff;
 }
 
 .popup-close-btn {
-  background: #e0e0e0;
-  color: #333;
+  background: #fafafa;
+  color: #0f172a;
+  border: 1px solid #0f172a;
 }
+
 .hero-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.9);
   border: none;
   border-radius: 50%;
   width: 50px;
@@ -727,7 +729,7 @@ body {
 }
 
 .hero-arrow:hover {
-  background: rgba(255, 255, 255, 1);
+  background: #ffffff;
 }
 
 .hero-arrow.left {
@@ -741,31 +743,32 @@ body {
 .hero-arrow img {
   width: 20px;
 }
+
 .user-greeting {
   font-weight: 600;
-  color: #1d1d1f;
+  color: #0f172a;
 }
 
 .logout-btn {
   background: none;
   border: none;
-  color: #d9534f;
+  color: #e11d48;
   cursor: pointer;
   font-size: 16px;
 }
 
 .logout-btn:hover {
-  color: #b52b27;
+  color: #be123c;
 }
 
 .signup-btn-nav {
-  background: #2563eb;
-  color: white;
+  background: #d97706;
+  color: #ffffff !important;
   padding: 6px 14px;
   border-radius: 4px;
 }
 
 .signup-btn-nav:hover {
-  background: #115e59;
-  color: white;
+  background: #b45309;
+  color: #ffffff !important;
 }
